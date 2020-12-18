@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "2280514852",
     "id" : "709B46B8",
-    "lastKnownWriteTime" : 1608325518,
-    "last_content_update" : 1608325518282,
+    "lastKnownWriteTime" : 1608327888,
+    "last_content_update" : 1608327888887,
     "path" : "~/Documents/Packages/platereadR/R/plot_stdCurve.R",
     "project_path" : "R/plot_stdCurve.R",
     "properties" : {
-        "cursorPosition" : "7,12",
+        "cursorPosition" : "5,44",
         "scrollLine" : "0",
         "tempName" : "Untitled1"
     },

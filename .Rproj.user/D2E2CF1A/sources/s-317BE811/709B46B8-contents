@@ -3,6 +3,7 @@
 #' This function serves as a wrapper to quickly visualize an analytical standard curve from a Gen5 software output
 #' @param assay.data.raw An excel table exported from the Gen5 software.
 #' @param standard.IDs A 2-column dataframe consisting of 'well_ID' (e.g., A12) and 'standard' (a standard concentration, generally in parts per million, mapped to each well_ID)
+#' @param title Title of the plot. A string.
 #' @keywords plot standard curve
 #' @export
 #' @examples
