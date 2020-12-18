@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1608324455112.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "C23A42A9",
+    "lastKnownWriteTime" : 1608324899,
+    "last_content_update" : 1608324899371,
+    "path" : "~/Documents/Packages/platereadR/R/abs_to_ppm.R",
+    "project_path" : "R/abs_to_ppm.R",
+    "properties" : {
+        "cursorPosition" : "13,38",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

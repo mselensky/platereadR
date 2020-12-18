@@ -1,0 +1,11 @@
+Package: platereadR
+Type: Package
+Title: A package to calculate analyte concentrations from various Gen5 software file outputs.
+Version: 0.1.0
+Author: Matt Selensky
+Maintainer: Matt Selensky <mselensky@gmail.com>
+Description: platereadR is a package that facilitates data collection from high-throughput well plate-based assays from Gen5 instruments. This package is designed to be shared internally with my lab group (https://osburnlab.github.io/) for our own purposes, but I encourage anyone who finds this package useful to use it freely!
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
