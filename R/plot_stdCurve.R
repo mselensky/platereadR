@@ -1,17 +1,14 @@
-#' Calculate analyte concentration (ppm) from plate reader absorbance values
+#' Plot standard curve
 #'
-#' This function calculates analyte concentration from absorbance values within an exported Gen5 Excel table. Returns a dataframe.
+#' This function serves as a wrapper to quickly visualize an analytical standard curve from a Gen5 software output
 #' @param assay.data.raw An excel table exported from the Gen5 software.
-#' @param sample.IDs A 2-column dataframe consisting of 'well_ID' (e.g., A12) and 'sample' (a sample ID mapped to each well_ID)
 #' @param standard.IDs A 2-column dataframe consisting of 'well_ID' (e.g., A12) and 'standard' (a standard concentration, generally in parts per million, mapped to each well_ID)
-#' @keywords calculate concentration excel
+#' @keywords plot standard curve
 #' @export
 #' @examples
-#' abs_to_ppm
-
-abs_to_ppm <- function(assay.data.raw, sample.IDs, standard.IDs) {
-
-  #remove header info from Gen5 Excel output
+#' plot_stdCurve
+#'
+plot_stdCurve <- function(assay.data.raw, standard.IDs, title) {
   suppressWarnings(
     assay_data <- assay.data.raw %>%
       slice(-c(1:33)) %>%
@@ -34,27 +31,14 @@ abs_to_ppm <- function(assay.data.raw, sample.IDs, standard.IDs) {
     select(well_ID, absorbance)
 
   suppressMessages(
-    sample_data <- assay_data_long %>%
-      left_join(., sampleIDs) %>%
-      filter(!is.na(sample)) %>%
-      mutate(rowID = as.character(seq(1:nrow(.))))
-  )
-
-  suppressMessages(
     standard_data <- assay_data_long %>%
       left_join(., standardIDs) %>%
       filter(!is.na(standard))
   )
-  # use lm to predict analyte concentration
-  curve <- lm(standard ~ absorbance, data = standard_data)
-  predicted_vals <- predict(curve, newdata = sample_data)
 
-  concentrations <- predicted_vals %>%
-    as.data.frame() %>%
-    rename("ppm" = ".") %>%
-    rownames_to_column("rowID") %>%
-    left_join(sample_data, ., "rowID") %>%
-    select(-rowID)
-
-  concentrations
+  standard_data %>%
+    ggplot(aes(absorbance, standard)) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+    ggtitle(title)
 }

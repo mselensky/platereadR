@@ -14,7 +14,7 @@ abs_to_ppm(assay.data.raw, sample.IDs, standard.IDs)
 \item{standard.IDs}{A 2-column dataframe consisting of 'well_ID' (e.g., A12) and 'standard' (a standard concentration, generally in parts per million, mapped to each well_ID)}
 }
 \description{
-This function calculates mean OTU or ASV count data based on a defined grouping_variable.
+This function calculates analyte concentration from absorbance values within an exported Gen5 Excel table. Returns a dataframe.
 }
 \examples{
 abs_to_ppm
